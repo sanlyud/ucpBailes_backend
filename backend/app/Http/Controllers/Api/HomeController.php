@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Khanh Bui
- * Date: 11/7/2016
- * Time: 11:43 AM
- */
+
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
