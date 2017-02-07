@@ -1,0 +1,3155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="css/master.css" rel="stylesheet" type="text/css" />
+<link href="css/commonStyles.css" rel="stylesheet" type="text/css" />
+<link href="css/tableScroll.css" rel="stylesheet" type="text/css" />
+<link href="css/users-districtSchools.css" rel="stylesheet" type="text/css" />
+<link href="css/assignments.css" rel="stylesheet" type="text/css"/>
+<link href="css/planning-classmgmt.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css">
+<link href="css/common.css" rel="stylesheet" type="text/css">
+
+<!--<link href="css/epc.css" rel="stylesheet" type="text/css" />
+<link href="css/text.css" rel="stylesheet" type="text/css" />
+<link href="css/classmgmt.css" rel="stylesheet" type="text/css" />
+<link href="css/planning.css" rel="stylesheet" type="text/css"/>-->
+<title>
+ThinkCentral</title>
+<!-- Build-Version: 1.31.1.3, Build on: 2016-11-14 17:22:50, Bamboo Build Number:  -->
+<!-- server-info: ePC -->
+<script language="javascript" src="js/epc.js"></script>
+<script language="javascript" src="js/assignment.js"></script>
+<script src="//assets.adobedtm.com/5d599bba477bad3ce4973aeb5c0a8c11709abbb4/satelliteLib-fddf2f6826adb036e9f76aba5a478bf17dd729f5.js"></script>
+<style id="antiClickjack">body{display:none !important;}</style><script language ="javascript">if (self === top) { var antiClickjack = document.getElementById("antiClickjack"); antiClickjack.parentNode.removeChild(antiClickjack);} else { top.location = self.location;}</script><script type="text/javascript">
+var currLayerId = "menuOpened"; 
+function togLayer(id) 
+{ 
+if(currLayerId) setDisplay(currLayerId, "none"); 
+if(id)setDisplay(id, "block"); 
+currLayerId = id; 
+} 
+function setDisplay(id,value) 
+{ 
+var elm = document.getElementById(id); 
+elm.style.display = value; 
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+<body>
+<div id="header" style="height:129.50px;">
+  <script type="text/javascript" src="js/dialog/tooltip.jquery.js"></script>
+<script type="text/javascript" src="js/dialog/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="js/dialog/ui.core.js"></script>
+<script type="text/javascript" src="js/dialog/ui.dialog.js"></script>
+<link href="css/jquery/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/miniHelp.css" rel="stylesheet" type="text/css" />
+<link href="css/commonStyles.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js/epc.js"></script>
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+
+<!-- UI Phase 2 Tab implementation  Start --> 
+<!--<link href="css/ePCLandingPage.css" rel="stylesheet" type="text/css" />-->
+<script type="text/javascript" language="javascript" src="js/ePCLandingPage.js"></script>
+<script language="javascript" src="js/epc.js"></script>
+<script type="text/javascript">
+function check(link) {
+    $(link).replaceWith($(link).text());
+}
+var urladdress = document.URL;
+$(document).ready(function(){
+		$('a').on('click touchend', function(e) {
+		    var el = $(this);
+		    var link = el.attr('href');
+		    window.location = link;
+		});
+	 var lastSelectedMenu = getMenuValueBasedOnThePage(urladdress,'selectedLeftMenu', "TEACHER",
+						"",
+						"");
+				if (lastSelectedMenu != "") {
+					var selectedID = "#".concat(lastSelectedMenu);
+					$(selectedID).css("background-color", "#9BADCD");
+					$(selectedID).css("color", "#FFFFFF");
+				}
+				
+				if(lastSelectedMenu != ""){
+					for(var i=0;i<document.all("dialog").length;i++){
+						document.all("dialog",i).style.transitionDelay="100ms";
+					}
+				}
+				
+				var topmenu = getMenuValueBasedOnThePage(urladdress,'selectedTopMenu', "TEACHER",
+							"",
+							"");
+				if (topmenu != "") {
+					var topmenuID = "#".concat(topmenu);
+					$(topmenuID).css("background", "#FFFFFF");
+					$(topmenuID).css("height", "34px");
+					$(topmenuID).css("margin-top", "-4px");
+					$(topmenuID).css("top", "0px");
+					$(topmenuID).css("padding", "0px");
+					$(topmenuID).css("border-radius", "3px 3px 0px 0px");
+					$(topmenuID).find('a').eq(0).css("padding-top", "8px");
+				}
+
+				var lastSelectedMenu;
+				$("#dialog ul li a").click(function() {
+					if (lastSelectedMenu) {
+						$(lastSelectedMenu).removeClass("selectedMenu");
+					}
+					lastSelectedMenu = $(this);
+					$(this).addClass("selectedMenu");
+				});
+				$("#dialog ul li a").mouseout(function() {
+				//	$(lastSelectedMenu).css("background-color", "#4267A6");
+					$(lastSelectedMenu).css("color", "#FFF");
+				});
+				
+				$(".navigationTab li").mouseover(function(){
+					$(this).find('div').eq(0).removeClass('visibilityHidden');
+				});
+
+				$(".navigationTabTeacher li").mouseover(function(){
+				    $(this).find('div').eq(0).removeClass('visibilityHidden');
+				});
+
+				$("#dialog .closeBut").click(function(){
+				     $(this).parent().parent().addClass('visibilityHidden');
+				});
+				
+			});
+
+	function getParameter(paramName) {
+		var searchString = window.location.search.substring(1), i, val, params = searchString
+				.split("&");
+		for (i = 0; i < params.length; i++) {
+			val = params[i].split("=");
+			if (val[0] == paramName) {
+				return val[1];
+			}
+		}
+		return null;
+	}
+	function mySmartPlanner()
+	{
+		document.getElementById('planner_link').style.background = '#9BADCD';
+		document.getElementById('planner_link').style.color = '#FFFFFF';
+		var lastSelectedMenu = getMenuValueBasedOnThePage(urladdress,'selectedLeftMenu', "TEACHER",
+				"","");
+		if (null != document.getElementById(lastSelectedMenu)) {
+			document.getElementById(lastSelectedMenu).style.background = '#FFFFFF';
+			document.getElementById(lastSelectedMenu).style.color = '#4267A6';
+		}
+	}
+
+	window.onload = function() {
+		var lastSelectedMenu = getMenuValueBasedOnThePage(urladdress,'selectedLeftMenu', "TEACHER",
+				"","");
+		if (lastSelectedMenu) {
+			document.getElementById(lastSelectedMenu).style.background = '#9BADCD';
+			document.getElementById(lastSelectedMenu).style.color = '#FFFFFF';
+		} else {
+			if (null != document.getElementById(lastSelectedMenu)) {
+				document.getElementById(lastSelectedMenu).style.background = '#FFFFFF';
+				document.getElementById(lastSelectedMenu).style.color = '#4267A6';
+			}
+		}
+	}
+	//TCNF-815
+	function launchHMHONEAssessment(pid, dispId) {
+		if((pid!=null && dispId!=null) && (pid.startsWith("88z") || dispId.startsWith("88z"))) {
+			window.open('idmRedirect.do?goto=hmhlogin&fromPage=dasa', '_blank');
+		}else {
+		 window.open('idmRedirect.do?goto=hmhassesment&fromPage=dasa', '_self'); 
+		}
+}
+	
+	function launchquickReports() {
+		window.open('quickReportLanding.do?selectedLeftMenu=quick_report&selectedTopMenu=reports','quickReport',"width=900,height=700","false");
+	}
+    //TCNF-963
+	 
+var sessionValue=3300000;
+    callSessionCheck(sessionValue); 
+    function callSessionCheck(value) {
+    	  setTimeout(         
+          'getCookiesValue()'     
+          , value);   
+      }
+    function getCookiesValue() {
+    	
+    	 $.ajax({type : "POST",
+			data : {
+				"method" : "getCookiesValue",
+			},
+			url : '/ePC/cookiesTimeOut.do',
+			success: function(result){
+          	var value = result;
+         	 if(value==0)
+           	showTheWarningMessage();          
+             else{     
+             	callSessionCheck(value);           
+               }
+          },
+     error: function() {
+       }     });
+      } 
+
+function showTheWarningMessage() {
+	 $('#sessionDialog').dialog({
+	    	  
+	                                         autoOpen: false,
+	                                         modal : true,
+	                                         width:606,
+	                                         closeText: 'hide',
+	                                         closeOnEscape: false,
+	                                         open: function() { 
+	                                                $(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').focus(); 
+	                                                setTimeout(function(){
+	                                                  	$.ajax({type : "POST",
+	                                                 		data : {
+	                                                 			"method" : "getCookiesValue",
+	                                                 			},
+	                                                 		url : '/ePC/cookiesTimeOut.do',
+	                                                 		success: function(result){
+	                                                 		 var value = result/(60*1000);
+	                                                 		 if(value>=5){
+	                                                 	    	window.location.reload(); 
+	                                                      	  $('#sessionDialog').dialog('close');    
+	                                                        } else if(value<=5){
+	                                                        	window.location.href = "/ePC/logout.do";
+	   	                                                     $('#sessionDialog').dialog('close');   
+	                                                        }
+	                                                       },
+	                                                  error: function() {
+	                                                   }     });
+	                                                }, 300000);     
+	                                          }, 
+	                                         buttons: { 
+	                                                "Yes":function() { 
+	                                                	
+	                                                	$.ajax({type : "POST",
+	                                            			url : '/ePC/index.do',
+	                                            			 success: function() {
+	                                            				   window.location.reload(); // This is not jQuery but simple plain ol' JS
+	                                            				    
+	                                            				  }
+	                                                });
+	                                                	                                         
+	                                                       $(this).dialog("close"); 
+	                                                },
+	                                              }
+	                                                });
+	                                                $('#sessionDialog').dialog("open");
+	                                            
+		}
+</script>
+<html>
+<body id="assignments">
+<div class="subMenuField displaynone commonDialogBox" id="sessionDialog" title="Session Timeout"><p> Your <em>ThinkCentral</em> session will Time Out shortly. Are you still there?</p></div>
+<div id="header">
+   <div id="headerContent">
+ 
+<!--HMH Logo-->
+<!--  <a href="districtAdminLanding.do" alt=" " tabindex="" class="logoLinkMain">
+		<img  alt="Home" width="140" height="80" src="http://localhost:8090/ePC/images/thinkcentralLogoWhite.png"/>
+</a> -->	
+<a class="logoLink" tabindex="" href="dashboardLogoRedirect.do"></a>
+<p id="userWelcome">
+	Welcome
+	<span class="bold">
+	<!-- BF-5620 Start -->
+						Doris&nbsp;Lawson<!-- BF-5620 End -->
+                <a href="start.do" alt=" " > Not You?</a></span>
+</p>
+ 
+<p id="permaLink">
+<a href="dashboardLogoRedirect.do" alt="go to home page">Home</a>|
+	<a href="#" onClick="javascript:generateHelpLink();" alt="Help">Help</a> | 
+	<a href="javascript:delegatePrinting()" alt="Print">Print</a> | 
+	<a href="javascript:doLogout(false);" alt="Log out">Log Out</a>
+</p>
+ 
+  </div><!--headerContent-->
+</div><!--header-->
+<div id="goldBar"></div><!--goldbar-->
+
+<nav role="navigation">
+
+<div id="navBar">
+ 
+<!--menuItem 1-->
+ <ul class="navigationTabTeacher">
+		
+  <li class="tab" id="tresource">
+  <a href="viewResources.do?method=retrieveResources&pageName=resourcepage&selectedLeftMenu=view_resource&selectedTopMenu=tresource">Resources</a>
+ 
+	<div id="dialog" class="menuItemTeacher1">
+	<div id="dialogBorderTopT">
+	<div id="dialogBorderTopGapOneT"></div></div>
+		
+		<ul>
+		<li></li>
+		<li><a id="view_resource" href="viewResources.do?method=retrieveResources&pageName=resourcepage&selectedLeftMenu=view_resource&selectedTopMenu=tresource">List</a></li>
+		  <li><a id="search"  href="dashboardSearchRedirect.do" tabindex="">Search</a></li>
+						</ul>  
+ 
+		<!-- <div id="dialogButtons"><a href="#" class="closeBut">Close</a></div> -->	
+ 
+	</div>	
+   </li>
+</ul>
+<ul class="navigationTabTeacher">
+		
+  <li class="tab" id="planning">
+  <a href="javascript:executePlanner()">Planner</a>
+ 
+	<div id="dialog" class="menuItemTeacher2">	
+		<div id="dialogBorderTopT"><div id="dialogBorderTopGapTwoT"></div></div>
+		
+		
+  		<ul>
+  		<li></li>
+            	<li>
+            		 <a id="planner_link"  onclick="mySmartPlanner()" href="javascript:executePlanner()" tabindex="">mySmartPlanner</a>
+            	</li>
+            	<li>
+            		<a id="viewLessonPlanner" href="calendar.do?method=viewCalendar&selectedLeftMenu=viewLessonPlanner&selectedTopMenu=planning" tabindex="">
+                    Legacy Planner </a>
+                     
+            	</li>
+            </ul>
+  		<!-- <div id="dialogButtons"><a href="#" class="closeBut">Close</a></div> -->
+	
+	</div>	
+   </li>
+</ul>
+<ul class="navigationTabTeacher">
+		
+  <li class="tab" id="classess">
+  <a href="classSummary.do?selectedLeftMenu=manage_classes&selectedTopMenu=classess">Classes</a>
+ 	 <div id="dialog" class="menuItemTeacher4">
+ 		<div id="dialogBorderTopT"><div id="dialogBorderTopGapThreeT"></div></div>
+ 		<ul>
+		<li>Find and Manage</li>
+		<!-- #TCD-12990 - IDM - Find Users UI, Redirect to Find Users on 1ID-Start-->
+		<li><a id="manage_students"  href="adminDispatch.do?method=run&selectedLeftMenu=manage_students&selectedTopMenu=classess">Students</a></li>
+     	<!-- #TCD-12990 - IDM - Find Users UI, Redirect to Find Users on 1ID-End -->
+		<li><a id="manage_groups"  href="groupSummary.do?method=view&amp&selectedLeftMenu=manage_groups&selectedTopMenu=classess">Groups</a></li>
+		<li><a id="manage_classes" href="classSummary.do?selectedLeftMenu=manage_classes&selectedTopMenu=classess">Classes</a></li>
+		</ul>  
+ 		<div class="divider"></div>
+ 		<ul>
+		<li>Add</li>
+		<li><a id="add_students"  href="adminRender.do?method=run&selectedLeftMenu=add_students&selectedTopMenu=classess">Student</a></li>
+		<li><a id="add_groups"  href="addGroup.do?method=view&selectedLeftMenu=add_groups&selectedTopMenu=classess">Group</a></li>
+		<li><a id="add_classes" href="addClass.do?selectedLeftMenu=add_classes&selectedTopMenu=classess">Class</a></li>
+		</ul>
+		<div class="divider"></div>
+		<ul>
+		<li>Import</li>
+		<!--  Start Teacher import functionality TCD-13059  -->
+		<li><a id="import_students" href="importUser.do?method=importUser&selectedLeftMenu=import_students&selectedTopMenu=classess">Students and Classes</a></li>
+     	<!--  Teacher import functionality TCD-13059  End -->
+		</ul>
+		<div class="divider"></div>
+    	<ul>
+    		<li>Settings</li>
+			<li><a id="commenting_students" href="commentingRights.do?method=view&selectedLeftMenu=commenting_students&selectedTopMenu=classess">Commenting</a></li>
+		</ul>
+		<!-- <div id="dialogButtons"><a href="#" class="closeBut">Close</a></div> -->
+	</div>
+   </li>
+</ul>
+<ul class="navigationTabTeacher">
+		
+  <li class="tab" id="tassignments">
+  <a href="viewAllAssignments.do?method=viewAllAssignments&methodName=fromAssessments&selectedLeftMenu=view_list&selectedTopMenu=tassignments">Assignments</a>
+ 
+	<div id="dialog" class="menuItemTeacher4">
+	<div id="dialogBorderTopT"><div id="dialogBorderTopGapFourT"></div>
+	</div>
+		
+		<ul>
+		<li>Manage</li>
+		<li><a id="view_list" href="viewAllAssignments.do?method=viewAllAssignments&methodName=fromAssessments&selectedLeftMenu=view_list&selectedTopMenu=tassignments" >List</a></li>
+		<li><a id="enter_scores" href="getAssignedTests.do?method=getAssignedTests&selectedLeftMenu=enter_scores&selectedTopMenu=tassignments" >Scores and Comments</a></li>
+		 </ul>  
+ 		<div class="divider"></div>
+		<ul>
+		<li>Add</li>
+	    <li><a id="add_test" href="dashboardSearchRedirect.do" >Test</a></li>
+			<li><a id="add_assignment"  href="AssignDetailsByTeacher.do?method=makeAssignByTeacher&selectedLeftMenu=add_assignment&selectedTopMenu=tassignments" >Other Assignment</a></li>
+		</ul>  
+ 		<div class="divider"></div>
+		<ul>
+		<li>Custom Resources</li>
+		<li><a id="view_custom_list" href="customTestLanding.do?method=retrieveCustomTests&selectedLeftMenu=view_custom_list&selectedTopMenu=tassignments">List</a></li>
+		<li><a id="add_cutom_test" href="customTestRouter.do?method=retrieveCustomTestsList&selectedLeftMenu=add_cutom_test&selectedTopMenu=tassignments">Create</a></li>
+		</ul>  
+ 		<div class="divider"></div>
+		<ul>
+		<li>Settings</li>
+		<li><a id="assessment_settings" href="getAssesmentSetting.do?method=getAssessmentSettings&selectedLeftMenu=assessment_settings&selectedTopMenu=tassignments">Assessment Settings</a></li>
+		</ul>
+ 
+		<!-- <div id="dialogButtons"><a href="#" class="closeBut">Close</a></div> -->
+ 
+	</div>	
+   </li>
+</ul>
+ 
+<!--menuItem 2-->
+ 
+<ul class="navigationTabTeacher">
+		
+  <li class="tab" id="reports">
+  <a href="reportLanding.do?reportType=assessments&selectedLeftMenu=assessment_report&selectedTopMenu=reports">Reports</a>
+ 
+	<div id="dialog" class="menuItemTeacher5">
+		<div id="dialogBorderTopT"><div id="dialogBorderTopGapFiveT"></div></div>
+		
+		<ul>
+		<li>General Reports</li>
+		<li><a id="assessment_report" href="reportLanding.do?reportType=assessments&selectedLeftMenu=assessment_report&selectedTopMenu=reports">Assessments</a></li>
+		<li><a id="standard_report" href="reportLanding.do?reportType=standards&selectedLeftMenu=standard_report&selectedTopMenu=reports">Standards</a></li>
+		<li><a  id="quick_report"  href="javascript:launchquickReports()" >Quick Reports</a></li>   		
+		</ul>  
+ 		<div class="divider"></div>
+ 		<!-- <div id="dialogButtons"><a href="#" class="closeBut">Close</a></div> -->	
+ 
+	</div>	
+   </li>
+</ul>
+ 
+ 
+ <ul class="navigationTabTeacher">
+		
+  <li class="tab" id="account">
+  <a href="manageUserAccount.do?accountType=myaccount&method=getAccount&selectedLeftMenu=update_account_info_TA&selectedTopMenu=account">My Account</a>
+ 
+	<div id="dialog" class="menuItemTeacher6">
+		<div id="dialogBorderTopT"><div id="dialogBorderTopGapSixT"></div></div>
+		<ul>
+		<li>Manage</li>
+		<li><a id="update_account_info_TA" href="manageUserAccount.do?accountType=myaccount&method=getAccount&selectedLeftMenu=update_account_info_TA&selectedTopMenu=account">Account</a></li>
+		<li><a id="view_available_products_TA" href="updateSelectedProducts.do?method=getSelectAvailProdcts&selectedLeftMenu=view_available_products_TA&selectedTopMenu=account"  onclick="check(this);showWaiting();">Products</a></li>
+		</ul> 
+		<div class="divider"></div>		
+		<ul>
+		<li>Settings</li>
+		<li><a id="account_settings" href="emailAccountSetting.do?method=getTeacherAccountSetting&selectedLeftMenu=account_settings&selectedTopMenu=account">Notification Settings</a></li>
+		</ul>
+ 
+		<!-- <div id="dialogButtons"><a href="#" class="closeBut">Close</a></div> -->
+	
+ 
+	</div>	
+   </li>
+</ul> 
+ 
+ 
+</div><!--navbar-->
+</nav>
+
+</body>
+</html></div>
+
+<fieldset id="main" style="border:0;margin-top:0.5px;">
+<p>
+<div id="ePCLayoutDiv" class="content-border">
+    <table align="center" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top">
+			<div id="printReady">
+				<h1>
+							  Assignment List</h1>
+						 <script type="text/javascript" src="js/dialog/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="js/CalendarPopup.js"></script>
+<script type="text/javascript" src="js/AnchorPosition.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/PopupWindow.js"></script>
+<script type="text/javascript" src="js/assignment.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/assessmentIntervention.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/dialog/ui.core.js"></script>
+<script type="text/javascript" src="js/dialog/ui.dialog.js"></script>
+<script type="text/javascript" src="js/dialog/tooltip.jquery.js"></script>
+<script type="text/javascript" src="js/AnchorPosition.js"></script>
+<link href="css/jquery/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="css/commonStyles.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+var isEPlanner = true;
+/* TCD-10849 Start*/
+var isDashboard = true;
+/* TCD-10849 End*/		
+
+function reOpenAssignment(assignmentId, dueDate, toolType, description,assignmentType){
+	var form = document.getElementById("viewAllAssignmentForm");
+	form.action="reopenAssignment.do?method=reopenAssignment";
+	document.getElementById("reOpenAssignmentId").value=assignmentId;
+	document.getElementById("reOpenDueDate").value=dueDate;
+	document.getElementById("reOpenToolType").value=toolType;
+	document.getElementById("reOpenDescription").value=description;
+	document.getElementById("reOpenAssignmentType").value=assignmentType;
+	form.submit();
+}
+</script>
+<script src="/ePC/JavaScriptServlet" defer="defer" type="text/javascript" language="javascript" ></script>
+<form name="viewAllAssignmentsForm" id="viewAllAssignmentForm" method="post" action="/ePC/viewAllAssignments.do?method=viewAllAssignments"><input type="hidden" id="EPC_CSRF_TOKEN" name = "EPC_CSRF_TOKEN" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/> 
+<input type="hidden" id="viewAllAssignments" name = "viewAllAssignments" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/> 
+<input type="hidden" id="classResults" name = "classResults" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/> 
+<input type="hidden" id="viewActivity" name = "viewActivity" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/> 
+<input type="hidden" id="viewAssignment" name = "viewAssignment" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/> 
+<input type="hidden" id="editActivityDetails" name = "editActivityDetails" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/> 
+<input type="hidden" id="editAssignmentDetails" name = "editAssignmentDetails" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/>
+<input type="hidden" id="editAdministratorsAssignmentDetails" name = "editAdministratorsAssignmentDetails" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/>
+<input type="hidden" id="AssignDetailsByTeacher" name = "AssignDetailsByTeacher" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/>
+<input type="hidden" id="searchPlanningContentsByUserTeacher" name = "searchPlanningContentsByUserTeacher" value="50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I"/>
+
+
+<input type="hidden" id="reOpenAssignmentId" name="reOpenAssignmentId" value=""/>
+<input type="hidden" id="reOpenDueDate" name="reOpenDueDate" value=""/>
+<input type="hidden" id="reOpenToolType" name="reOpenToolType" value=""/>
+<input type="hidden" id="reOpenDescription" name="reOpenDescription" value=""/>  
+<input type="hidden" id="reOpenAssignmentType" name="reOpenAssignmentType" value=""/>  
+
+
+<body>
+<div class="subMenuField displaynone" id="deleteDialog" title="Important"></div>
+<div class="subMenuField displaynone" id="editDialog" title="Assignment In Use"><p>One or more students have the assignment open and it cannot be edited at this time.</p><p>Do you want to <strong>View</strong> the assignment?</p></div>
+<div class="subMenuField displaynone commonDialogBox" id="saveASDialog"><p>This is an adaptive assignment and no classes are available.</p></div>
+
+		<div class="subMenuField displaynone "
+			id="deleteDialog1" title="Do You Want To Delete This Assignment?">
+			<p style="margin-left: 85px">One or more students have worked on this assignment.<br>If you
+				delete this assignment, please note:<br></p>
+				<ul style="margin-left: 100px">
+					<li>All references to this assignment's results will be deleted.</li>
+					<li>Students will lose any work they have done on this
+					assignment.</li>
+				</ul>
+			<p style="margin-left: 85px">Do you want to delete this assignment?</p>
+			
+		</div>
+		<div class="subMenuField displaynone commonDialogBox"
+			id="deleteDialog2" title="Do You Want To Delete This Assignment?">
+			<p style="margin-left: 85px">One or more students have completed this assignment.<br>If you
+			delete this assignment, please note:<br></p>
+			<ul style="margin-left: 100px">
+				<li>All references to this assignment's results will be deleted.</li>
+				<li>Students will lose any work they have completed on this
+					assignment.</li>
+				<li>Any follow-up assignments will be deleted.</li>
+			</ul>
+			<p style="margin-left: 85px">Do you want to delete this assignment?</p>
+		</div>
+		
+		<div class="subMenuField displaynone commonDialogBox"
+			id="deleteDialog3" title="Do You Want To Delete This Assignment?">
+			<p style="margin-left: 85px">If you delete this assignment, please note:<br></p>
+			<ul style="margin-left: 100px">
+				<li>This assignment will be removed from the students' <b>Things
+						to Do</b> lists.
+				</li>
+			</ul>
+			<p style="margin-left: 85px">Do you want to delete this assignment?</p>
+		</div>
+		
+		<div class="subMenuField displaynone commonDialogBox"
+			id="deleteDialog4" title="Do You Want To Delete This Assignment?">
+			<p style="margin-left: 85px">One or more students have completed this assignment.<br>If you
+				delete this assignment,please note:<br>
+			</p>
+			<ul style="margin-left: 100px">
+				<li>All references to this assignment's results will be
+					deleted.</li>
+				<li>Students will lose any work they have completed on this
+					assignment.</li>
+				<li>This assignment will be removed from the students' <b>Things
+						to Do</b> lists.
+				</li>
+			</ul>
+			<p style="margin-left: 85px">Do you want to delete this assignment?</p>
+		</div>
+		
+		<div class="subMenuField displaynone commonDialogBox"
+			id="deleteDialog5" title="Do You Want To Delete This Assignment?">
+			<p style="margin-left: 85px">One or more students have completed this assignment.<br>If you
+				delete this assignment,please note:<br></p>
+				<ul style="margin-left: 100px">
+			<li>All references to this assignment's results will be deleted.</li>
+			<li>Students will lose any work they have completed on this
+				assignment.</li>
+			<li>This assignment will be removed from the students' <b>Things
+					to Do</b> lists.
+			</li>
+			</ul>
+			<p style="margin-left: 85px">Do you want to delete this assignment?</p>
+		</div>
+		
+		<div class="subMenuField displaynone commonDialogBox"
+			id="deleteDialog6" title="Do You Want To Delete This Assignment?">
+				<p style="margin-left: 85px">One or more students are working on this assignment.<br>If you
+				delete this assignment, please note:<br></p>
+				<ul style="margin-left: 100px">
+			<li>All references to this assignment's results will be deleted.</li>
+			<li>Students will lose any work they have done on this
+				assignment.</li>
+			<li>This assignment will be removed from the students' <b>Things
+					to Do</b> lists.
+			</li>
+			</ul>
+			<p style="margin-left: 85px">Do you want to delete this assignment?</p>
+		</div>
+
+
+		<input type="hidden" name="methodName" value=""><input type="hidden" name="buttonClicked" value="true"><input type="hidden" name="userrole" value="TEACHER"><input type="hidden" name="isSoar" value="-1"><span></span>
+<table width="742" border="0" cellpadding="0" cellspacing="0" class="titleTop-space">
+    <tr>
+    	<td colspan="3">
+        <fieldset>
+            <legend>Find assignments</legend>           
+            <table border="0" cellpadding="3" cellspacing="3" id="viewAssignments_findAssignmentsTable">
+                <tr align="left" valign="top"> 
+                    <td colspan="2" class="fieldName">Due Date</td>
+                    <td colspan="2" rowspan="3" valign="middle" class="fieldName">
+                        <table border="0" cellspacing="3" cellpadding="3">
+                            <tr>
+                                <td width="8%"><label for="studentclassSelect">Class:</label></td>
+                                <td width="92%">
+                                <select name="studentclass" onchange="populateDropDown(this,'getSubjectsAndStudentsForClassRoom', 'subject','student');" id="studentclassSelect" class="assign_a210width"><option value="">All</option>
+<option value="244193195DFF392CE0530F0D200A4589">3rd grade math</option></select></td>
+                              </tr>
+                            <tr>
+                                <td><label for="subjectSelect">Subject:</label></td>
+                                <td>
+                                <select name="subject" id="subjectSelect" class="assign_a210width"><option value="">All</option>
+<option value="6">Art</option>
+<option value="7">English Language Development</option>
+<option value="4">Health</option>
+<option value="1">Mathematics</option>
+<option value="5">Reading</option>
+<option value="2">Science</option>
+<option value="3">Social Studies</option></select></td>
+                              </tr>
+                            <tr>
+                                <td><label for="studentSelect">Student:</label></td>
+                                <td>
+                                <select name="student" id="studentSelect" class="assign_a210width"><option value="0" selected="selected">Entire Class</option></select></td>
+                              </tr>
+                              <tr>
+                                <td><label for="programSelect">Program:</label></td>
+                                <td align="left" class="fieldName" >
+								<select name="program" id="programSelect" style="width:210px"><option value="">All</option><option value="002DB21983F7EF99E0530100007F7810">CA Go Math!</option><option value="009055E0EF956921E0530100007F67B4">CA Go Math! Spanish</option><option value="F980C1051F37090DE044002128BDDE1A">CA Math Expressions</option><option value="FBDD62FA97074749E044002128BDDE1A">GO MATH AL</option><option value="FBDD62FA97214749E044002128BDDE1A">GO MATH AR 2012</option><option value="FBDD62FA976B4749E044002128BDDE1A">GO MATH LA 2012</option><option value="F939664B55166255E044002128BDDE1A">Go Math</option><option value="B2D8B70507312C13E04400144F2506FC">Go Math 2012</option><option value="FBCDDE60EDA05469E044002128BDDE1A">Go Math 2012 Spanish</option><option value="C0B24B9E3A384575E04400144F2506FC">Go Math FL Common Core</option><option value="FEED8F7C207D7337E0430100007FFAF3">Go Math FL MAFS</option><option value="27628DB65C5CF3F3E0530100007F099C">Go Math FL MAFS Spanish</option><option value="FBDD62FA97AC4749E044002128BDDE1A">Go Math FL NGSSS</option><option value="96E1AEDD6EF03FD9E04400144F250A8C">GoMath 2011</option><option value="C6CE5CA0432451E8E04400144F250A8C">Gomath2013CA</option><option value="00FC2D252A8EB72DE0530100007F21F1">Gomath2014GA</option><option value="7AAE941A57B97211E04400144F2506FC">HSP Math</option><option value="FBDD62FA979F4749E044002128BDDE1A">MATH KY 2010</option><option value="FBF86461B59A10F3E044002128BDDE1A">MATH NC 2010</option><option value="FBF86461B5A710F3E044002128BDDE1A">MATH OK 2011</option><option value="FBCDDE60ED935469E044002128BDDE1A">MATH SP_FL 2011</option><option value="FBCDDE60ED795469E044002128BDDE1A">MATH WV 2011</option><option value="B2389BAA104E1645E04400144F250A8C">MN Math Expressions</option><option value="00E056402F25735DE0530100007FE93B">Math Expressions</option><option value="D6C43EB1C396564EE044002128BDDE1A">Math Expressions SP</option><option value="A92F07F3D5653A92E04400144F2506FC">NY_GO_MATH_2011</option><option value="FBF93C9D5C464129E044002128BDDE1A">SAXON NA 2012</option><option value="A4DD5F3588C21E23E04400144F2506FC">Science Fusion</option><option value="B14BAED4B0155E36E04400144F2506FC">ScienceFusion</option><option value="01303C2C171C2A62E0530100007F41FC">TX Go Math!</option><option value="E2DAE57467DA6739E044002128BDDE1A">TX Go Math! SP</option></select></td>
+                              </tr>
+							  </table>
+                    </td>
+                    </tr>
+                <tr align="left" valign="top">
+                    <td width="44" class="fieldName"><label>From:</label></td>
+                    <td width="166" class="fieldName">
+                    <table width="135" height="25" border="0" cellpadding="0" cellspacing="4">
+                      <tr>
+                        <td width="54" valign="top"><input type="text" name="fromDate" maxlength="8" size="9" value="08/01/16" id="fromDateTxtInp"></td>
+                        <td width="34" valign="bottom">
+                        <a href="javascript:showCalForViewAssignment(document.forms[0].fromDate, 'cal_lnk')" onMouseOut="MM_swapImgRestore()"
+                            onMouseOver="MM_swapImage('calendarButton','','https://www-k6.thinkcentral.com/ePC/images/Cal_Down.jpg',1)" name="cal_lnk" ID="cal_lnk" class="calendar">
+                            </a>
+                        </td>
+                        </tr>
+                    </table>
+                    </td>
+                </tr>
+                <tr align="left" valign="top" >
+                    <td class="fieldName"><label>To:</label></td>
+                    <td class="fieldName">
+                        <table width="136" border="0" cellpadding="0" cellspacing="4">
+                          <tr>
+                            <td width="54" valign="top"><input type="text" name="toDate" maxlength="8" size="9" value="11/25/16" id="toDateTxtInp"></td>
+                            <td width="34" valign="bottom">
+                                <a href="javascript:showCalForViewAssignment(document.forms[0].toDate, 'tcal_lnk')" onMouseOut="MM_swapImgRestore()"
+                                    onMouseOver="MM_swapImage('calendarButton','','https://www-k6.thinkcentral.com/ePC/images/Cal_Down.jpg',1)" name="tcal_lnk" ID="tcal_lnk" class="calendar">
+                                   
+                                 </a>
+                            </td>
+                            </tr>
+						  <tr><td>&nbsp;</td></tr>
+                        </table>
+                    </td>
+                 </tr>
+                 <tr align="left" valign="top" >
+                 <td colspan="6">
+					<table width="709" cellspacing="0" cellpadding="0" border="0">
+        				<tr>
+         					<!-- TCTT-612 Accessibility changes to UI controls -->
+							<td class="fieldName"><input type="checkbox" name="showOnlyAutoPrescriptions" value="on" id="show_auto_presc_chk"><input type="hidden" name="showOnlyAutoPrescriptions" value="false"><label for="show_auto_presc_chk">Show only Automated Prescription capable tests</label></td>					
+							<td class="fieldName"><input type="checkbox" name="showOnlyAssignments" value="on" id="show_only_test_chk"><input type="hidden" name="showOnlyAssignments" value="false"><label for="show_only_test_chk">Show only tests</label></td>					
+							<!-- TCTT-612 Accessibility changes to UI controls -->
+							<td align="right"><input name="find" type="button" id="find" value="Find" onClick="findclick();"> <input name="clear" type="reset" id="clear" value="Clear" onClick="clearclick();"></td>							
+        				</tr>
+       				</table>
+				</td>
+                </tr>				 
+            </table>
+   		</fieldset>
+        </td>
+	</tr>
+  	<tr>
+    	<td colspan="3">
+       	<fieldset class="group-space">
+      		<legend>Assignments</legend>
+			<input type="hidden" name="soarLink" value="https://ssms.thinkcentral.com/web/teacher?&amp;token=MUZCREQ0N0I2MUM3RUU2RUUwNTMwMTAwMDA3RkYwRkM%3D"><table width="720" border="0" cellspacing="0" cellpadding="0">
+          		<tr>
+           			<td>
+                	<table width="100%" border="0" cellspacing="2" cellpadding="0">
+                    	<tr>
+                        	<td align="left" class="fieldNameBold">
+                                <a href="https://ssms.thinkcentral.com/web/teacher?&amp;token=MUZCREQ0N0I2MUM3RUU2RUUwNTMwMTAwMDA3RkYwRkM%3D" target="_blank">Soar to Success Assignment(s)</a>
+                            </td>  
+                            </tr>
+                  	</table>
+                	<input type="hidden" name="showAdmin" id="showAdmin" value="false" />
+               <input type="hidden" name="showPendingAdmAssignExt" id="showPendingAdmAssignExt" value="false" />
+                </td>
+            <td align="right" width="50%"><input name="SearchResources" type="button"  id="searchResources" value="Add Test" onClick="javascript:callsearchresources();">
+            <input name="MakeCustomAssignment" type="button" id="makeCustomAssignment" value="Add Assignment" onClick="callmakecustomassignment();">
+            </td> 
+          </tr>
+        </table>
+    </br> 
+	<script>
+function getElementByIdAllBrowsers(elementId)
+		{
+ 	var elementObject = document.getElementById(elementId);
+		if (elementObject == null)
+   	{
+		  var elements = document.getElementsByName(elementId);
+   	  if (elements != null)
+   	  {
+         elementObject = elements[0];
+   	  }
+   	}  
+ 	return elementObject;
+   }
+function isDecendant(decendant,ancestor){
+    return ((decendant.parentNode==ancestor)  ||
+        (decendant.parentNode!=document) &&
+            isDecendant(decendant.parentNode,ancestor));
+}</script><script>
+function addHiddenFieldviewAllAssignmentsForm(){
+var formElement = null;
+var formComponent = null;
+var newField = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+
+// ********tofield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('to');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'to';
+newField.value = '20';
+newField.id = 'to';
+formElement.appendChild(newField);
+} else {
+var componentName = 'to';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '20';
+}}
+}
+
+// ********orderByKeyfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('orderByKey');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'orderByKey';
+newField.value = '';
+newField.id = 'orderByKey';
+formElement.appendChild(newField);
+} else {
+var componentName = 'orderByKey';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********numberOfRecordsfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('numberOfRecords');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'numberOfRecords';
+newField.value = '20';
+newField.id = 'numberOfRecords';
+formElement.appendChild(newField);
+} else {
+var componentName = 'numberOfRecords';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '20';
+}}
+}
+
+// ********orderByfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('orderBy');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'orderBy';
+newField.value = '';
+newField.id = 'orderBy';
+formElement.appendChild(newField);
+} else {
+var componentName = 'orderBy';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********todaysOffsetfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('todaysOffset');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'todaysOffset';
+newField.value = '-18000000';
+newField.id = 'todaysOffset';
+formElement.appendChild(newField);
+} else {
+var componentName = 'todaysOffset';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '-18000000';
+}}
+}
+
+// ********subjectfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('subject');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'subject';
+newField.value = '';
+newField.id = 'subject';
+formElement.appendChild(newField);
+} else {
+var componentName = 'subject';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********userrolefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('userrole');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'userrole';
+newField.value = 'TEACHER';
+newField.id = 'userrole';
+formElement.appendChild(newField);
+} else {
+var componentName = 'userrole';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = 'TEACHER';
+}}
+}
+
+// ********fromfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('from');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'from';
+newField.value = '1';
+newField.id = 'from';
+formElement.appendChild(newField);
+} else {
+var componentName = 'from';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '1';
+}}
+}
+
+// ********showLockfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('showLock');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'showLock';
+newField.value = '';
+newField.id = 'showLock';
+formElement.appendChild(newField);
+} else {
+var componentName = 'showLock';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********studentfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('student');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'student';
+newField.value = '0';
+newField.id = 'student';
+formElement.appendChild(newField);
+} else {
+var componentName = 'student';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '0';
+}}
+}
+
+// ********showProgramfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('showProgram');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'showProgram';
+newField.value = 'SHOW_VIEW';
+newField.id = 'showProgram';
+formElement.appendChild(newField);
+} else {
+var componentName = 'showProgram';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = 'SHOW_VIEW';
+}}
+}
+
+// ********gradefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('grade');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'grade';
+newField.value = '';
+newField.id = 'grade';
+formElement.appendChild(newField);
+} else {
+var componentName = 'grade';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********pageNumberfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('pageNumber');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'pageNumber';
+newField.value = '1';
+newField.id = 'pageNumber';
+formElement.appendChild(newField);
+} else {
+var componentName = 'pageNumber';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '1';
+}}
+}
+
+// ********soarLinkfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('soarLink');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'soarLink';
+newField.value = 'https://ssms.thinkcentral.com/web/teacher?&token=MUZCREQ0N0I2MUM3RUU2RUUwNTMwMTAwMDA3RkYwRkM%3D';
+newField.id = 'soarLink';
+formElement.appendChild(newField);
+} else {
+var componentName = 'soarLink';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = 'https://ssms.thinkcentral.com/web/teacher?&token=MUZCREQ0N0I2MUM3RUU2RUUwNTMwMTAwMDA3RkYwRkM%3D';
+}}
+}
+
+// ********orderByAscDescfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('orderByAscDesc');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'orderByAscDesc';
+newField.value = '';
+newField.id = 'orderByAscDesc';
+formElement.appendChild(newField);
+} else {
+var componentName = 'orderByAscDesc';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********methodNamefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('methodName');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'methodName';
+newField.value = '';
+newField.id = 'methodName';
+formElement.appendChild(newField);
+} else {
+var componentName = 'methodName';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********findfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('find');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'find';
+newField.value = 'Find';
+newField.id = 'find';
+formElement.appendChild(newField);
+} else {
+var componentName = 'find';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = 'Find';
+}}
+}
+
+// ********EPC_CSRF_TOKENfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('EPC_CSRF_TOKEN');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'EPC_CSRF_TOKEN';
+newField.value = 'KXY9-UUKM-FH6C-48FN-ZNQL-IJMJ-4D05-A3Z3-EW06-1DGU-3MEW-C1RX-CB5C-AIDU-OVZH-JS11-QR1G-8MOH-UV5X-5PA0-MSVH-9T5N-WLRT-NN3J';
+newField.id = 'EPC_CSRF_TOKEN';
+formElement.appendChild(newField);
+} else {
+var componentName = 'EPC_CSRF_TOKEN';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = 'KXY9-UUKM-FH6C-48FN-ZNQL-IJMJ-4D05-A3Z3-EW06-1DGU-3MEW-C1RX-CB5C-AIDU-OVZH-JS11-QR1G-8MOH-UV5X-5PA0-MSVH-9T5N-WLRT-NN3J';
+}}
+}
+
+// ********allowStudentViewfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('allowStudentView');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'allowStudentView';
+newField.value = '';
+newField.id = 'allowStudentView';
+formElement.appendChild(newField);
+} else {
+var componentName = 'allowStudentView';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********pageSizefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('pageSize');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'pageSize';
+newField.value = '20';
+newField.id = 'pageSize';
+formElement.appendChild(newField);
+} else {
+var componentName = 'pageSize';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '20';
+}}
+}
+
+// ********validationStatusfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('validationStatus');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'validationStatus';
+newField.value = '';
+newField.id = 'validationStatus';
+formElement.appendChild(newField);
+} else {
+var componentName = 'validationStatus';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********selectedClassfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('selectedClass');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'selectedClass';
+newField.value = '244193195DFF392CE0530F0D200A4589';
+newField.id = 'selectedClass';
+formElement.appendChild(newField);
+} else {
+var componentName = 'selectedClass';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '244193195DFF392CE0530F0D200A4589';
+}}
+}
+
+// ********totalRecordsfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('totalRecords');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'totalRecords';
+newField.value = '26';
+newField.id = 'totalRecords';
+formElement.appendChild(newField);
+} else {
+var componentName = 'totalRecords';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '26';
+}}
+}
+
+// ********toDatefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('toDate');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'toDate';
+newField.value = '11/25/16';
+newField.id = 'toDate';
+formElement.appendChild(newField);
+} else {
+var componentName = 'toDate';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '11/25/16';
+}}
+}
+
+// ********assignmentIdfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('assignmentId');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'assignmentId';
+newField.value = '';
+newField.id = 'assignmentId';
+formElement.appendChild(newField);
+} else {
+var componentName = 'assignmentId';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********isMovedfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('isMoved');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'isMoved';
+newField.value = '0';
+newField.id = 'isMoved';
+formElement.appendChild(newField);
+} else {
+var componentName = 'isMoved';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '0';
+}}
+}
+
+// ********schoolfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('school');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'school';
+newField.value = '';
+newField.id = 'school';
+formElement.appendChild(newField);
+} else {
+var componentName = 'school';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********studentclassfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('studentclass');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'studentclass';
+newField.value = '';
+newField.id = 'studentclass';
+formElement.appendChild(newField);
+} else {
+var componentName = 'studentclass';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********fromDatefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('fromDate');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'fromDate';
+newField.value = '08/01/16';
+newField.id = 'fromDate';
+formElement.appendChild(newField);
+} else {
+var componentName = 'fromDate';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '08/01/16';
+}}
+}
+
+// ********restrictQuestionsfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('restrictQuestions');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'restrictQuestions';
+newField.value = '';
+newField.id = 'restrictQuestions';
+formElement.appendChild(newField);
+} else {
+var componentName = 'restrictQuestions';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********programfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('program');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'program';
+newField.value = '';
+newField.id = 'program';
+formElement.appendChild(newField);
+} else {
+var componentName = 'program';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********assignStatusfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('assignStatus');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'assignStatus';
+newField.value = '';
+newField.id = 'assignStatus';
+formElement.appendChild(newField);
+} else {
+var componentName = 'assignStatus';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********methodfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('method');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'method';
+newField.value = 'viewAllAssignments';
+newField.id = 'method';
+formElement.appendChild(newField);
+} else {
+var componentName = 'method';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = 'viewAllAssignments';
+}}
+}
+
+// ********numberOfPagesfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('numberOfPages');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'numberOfPages';
+newField.value = '2';
+newField.id = 'numberOfPages';
+formElement.appendChild(newField);
+} else {
+var componentName = 'numberOfPages';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '2';
+}}
+}
+
+// ********plannerfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('planner');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'planner';
+newField.value = '';
+newField.id = 'planner';
+formElement.appendChild(newField);
+} else {
+var componentName = 'planner';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********teacherfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('teacher');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'teacher';
+newField.value = '1FBDD47B61C7EE6EE0530100007FF0FC';
+newField.id = 'teacher';
+formElement.appendChild(newField);
+} else {
+var componentName = 'teacher';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '1FBDD47B61C7EE6EE0530100007FF0FC';
+}}
+}
+
+// ********toolTypefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('toolType');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'toolType';
+newField.value = '';
+newField.id = 'toolType';
+formElement.appendChild(newField);
+} else {
+var componentName = 'toolType';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********validationEditStatusfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('validationEditStatus');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'validationEditStatus';
+newField.value = '';
+newField.id = 'validationEditStatus';
+formElement.appendChild(newField);
+} else {
+var componentName = 'validationEditStatus';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********assignmentToDeletefield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('assignmentToDelete');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'assignmentToDelete';
+newField.value = '';
+newField.id = 'assignmentToDelete';
+formElement.appendChild(newField);
+} else {
+var componentName = 'assignmentToDelete';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '';
+}}
+}
+
+// ********selectedSubjectfield
+if (formElement != null) {formComponent = getElementByIdAllBrowsers('selectedSubject');
+if (formComponent == null || formComponent=='undefined' || !isDecendant(formComponent, formElement)){
+newField = document.createElement('input');
+newField.type = 'hidden';
+newField.name = 'selectedSubject';
+newField.value = '244193195DFF392CE0530F0D200A4589';
+newField.id = 'selectedSubject';
+formElement.appendChild(newField);
+} else {
+var componentName = 'selectedSubject';
+if (componentName.length > 23 && componentName.substring(0,23) == 'epcPaginationPageNumber'){
+}else
+{formComponent.value = '244193195DFF392CE0530F0D200A4589';
+}}
+}
+}
+</script>
+<script>
+function addPaginationHiddenFieldviewAllAssignmentsForm(){
+var formElement = null;
+var newPageNumberField = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+newPageNumberField = getElementByIdAllBrowsers('pageNumber');
+if (newPageNumberField == null && formElement != null) {
+newPageNumberField = document.createElement('input');
+newPageNumberField.type = 'hidden';
+newPageNumberField.name = 'pageNumber';
+newPageNumberField.value = 1;
+newPageNumberField.id = 'pageNumber';
+formElement.appendChild(newPageNumberField);
+}
+}
+</script>
+<script>
+function beforeSubmitForPaginationviewAllAssignmentsForm(){
+var formElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+addHiddenFieldviewAllAssignmentsForm();
+addPaginationHiddenFieldviewAllAssignmentsForm();
+}
+}
+</script>
+<script>
+function nextPageForPaginationviewAllAssignmentsForm(){
+var formElement = null;
+var pageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+beforeSubmitForPaginationviewAllAssignmentsForm();
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (pageNumberElement != null){
+var pageNumberValue = null;
+pageNumberValue = pageNumberElement.value;
+var noOfPage = null;
+noOfPage = 2;
+if (pageNumberValue != null){
+if (noOfPage==pageNumberValue){
+pageNumberValue =pageNumberValue;
+} else {
+pageNumberValue = parseInt(pageNumberValue) + 1;
+}
+} else {
+pageNumberValue = 1;
+}
+pageNumberElement.value=pageNumberValue;
+}
+}
+submitFormForPaginationviewAllAssignmentsForm();
+}
+</script>
+<script>
+function previousPageForPaginationviewAllAssignmentsForm(){
+var formElement = null;
+var pageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+beforeSubmitForPaginationviewAllAssignmentsForm();
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (pageNumberElement != null){
+var pageNumberValue = null;
+pageNumberValue = pageNumberElement.value;
+if (pageNumberValue != null){
+pageNumberValue = parseInt(pageNumberValue) - 1;
+} else {
+pageNumberValue = 1;
+}
+pageNumberElement.value=pageNumberValue;
+}
+}
+submitFormForPaginationviewAllAssignmentsForm();
+}
+</script>
+<script>
+function firstPageForPaginationviewAllAssignmentsForm(){
+var formElement = null;
+var pageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+beforeSubmitForPaginationviewAllAssignmentsForm();
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (pageNumberElement != null){
+var pageNumberValue = null;
+pageNumberValue = pageNumberElement.value;
+pageNumberValue = 1;
+pageNumberElement.value=pageNumberValue;
+}
+}
+submitFormForPaginationviewAllAssignmentsForm();
+}
+</script>
+<script>
+function lastPageForPaginationviewAllAssignmentsForm(){
+var formElement = null;
+var pageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+beforeSubmitForPaginationviewAllAssignmentsForm();
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (pageNumberElement != null){
+var pageNumberValue = null;
+pageNumberValue = pageNumberElement.value;
+pageNumberValue =2;
+pageNumberElement.value=pageNumberValue;
+}
+}
+submitFormForPaginationviewAllAssignmentsForm();
+}
+</script>
+<script>
+function specificPageForPaginationviewAllAssignmentsForm(e){var keycode;if (window.event) {keycode = window.event.keyCode;} else if (e) {keycode = e.which;} else {return true;}if (keycode == 13){
+var formElement = null;
+var pageNumberElement = null;
+var userEnteredPageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+userEnteredPageNumberElement = getElementByIdAllBrowsers('epcPaginationPageNumberviewAllAssignmentsForm');beforeSubmitForPaginationviewAllAssignmentsForm();
+userEnteredPageNumberElement = getElementByIdAllBrowsers('epcPaginationPageNumberviewAllAssignmentsForm');
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (userEnteredPageNumberElement != null && pageNumberElement != null){
+var pageNumberValue = null;
+pageNumberValue = userEnteredPageNumberElement.value;
+if (pageNumberValue != null){
+try {
+pageNumberValue = parseInt(pageNumberValue);
+} catch(ex) {
+pageNumberValue = 1;
+}
+} else{
+pageNumberValue = 1;
+}
+pageNumberElement.value=pageNumberValue;
+}
+}
+submitFormForPaginationviewAllAssignmentsForm();
+return false;
+}
+}
+</script>
+<script>
+function specificPageForPaginationBottomviewAllAssignmentsForm(e){var keycode;if (window.event) {keycode = window.event.keyCode;} else if (e) {keycode = e.which;} else {return true;}if (keycode == 13){
+var formElement = null;
+var pageNumberElement = null;
+var userEnteredPageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+userEnteredPageNumberElement = getElementByIdAllBrowsers('epcPaginationPageNumberBottomviewAllAssignmentsForm');beforeSubmitForPaginationviewAllAssignmentsForm();
+userEnteredPageNumberElement = getElementByIdAllBrowsers('epcPaginationPageNumberBottomviewAllAssignmentsForm');
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (userEnteredPageNumberElement != null && pageNumberElement != null){
+var pageNumberValue = null;
+pageNumberValue = userEnteredPageNumberElement.value;
+if (pageNumberValue != null){
+try {
+pageNumberValue = parseInt(pageNumberValue);
+} catch(ex) {
+pageNumberValue = 1;
+}
+} else{
+pageNumberValue = 1;
+}
+pageNumberElement.value=pageNumberValue;
+}
+}
+submitFormForPaginationviewAllAssignmentsForm();
+return false;
+}
+}
+</script>
+<script>
+function pageNumberForPaginationviewAllAssignmentsForm(clickedPageNumber){
+var formElement = null;
+var pageNumberElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+beforeSubmitForPaginationviewAllAssignmentsForm();
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (pageNumberElement != null){
+pageNumberElement.value=clickedPageNumber;
+}
+submitFormForPaginationviewAllAssignmentsForm();
+}
+}
+</script>
+<script>
+function sortPageForPaginationviewAllAssignmentsForm(useSelectedSortOrder,useSelectedOrderByAscDesc){
+var formElement = null;
+var pageNumberElement = null;
+var sortKeyElement = null;
+var sortElement = null; var sortElementVal = null; var sortElementInComing = useSelectedOrderByAscDesc;  
+var sortKeyAscDescElement = null; var sortKeyAscDescElementVal = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null){
+beforeSubmitForPaginationviewAllAssignmentsForm();
+sortKeyElement = getElementByIdAllBrowsers('orderByKey');
+sortElement = getElementByIdAllBrowsers('orderBy');
+if (sortElement != null){
+sortElementVal=sortElement.value;
+}
+if (sortKeyElement != null){
+sortKeyElement.value=useSelectedSortOrder;
+}
+sortKeyAscDescElement = getElementByIdAllBrowsers('orderByAscDesc');
+if (sortKeyAscDescElement != null){ sortKeyAscDescElementVal = sortKeyAscDescElement.value;
+if (sortKeyAscDescElementVal=='Asc' && (sortElementInComing==sortElementVal)) {
+sortKeyAscDescElement.value='Desc';
+}
+else if (sortKeyAscDescElementVal=='Desc' && (sortElementInComing==sortElementVal)) {
+sortKeyAscDescElement.value='Asc';
+}
+else sortKeyAscDescElement.value='Asc';}
+pageNumberElement = getElementByIdAllBrowsers('pageNumber');
+if (pageNumberElement != null){
+pageNumberElement.value=1;
+}
+submitFormForPaginationviewAllAssignmentsForm();
+}
+}
+</script>
+<script>
+function submitFormForPaginationviewAllAssignmentsForm(){
+var formElement = null;
+formElement = getElementByIdAllBrowsers('viewAllAssignmentsForm');
+if (formElement != null && formElement.action.value!='deleteAssignment' && formElement.action.value!='deleteAssignmentValidate'){
+formElement.action='viewAllAssignments.do';
+var viewElement = getElementByIdAllBrowsers('method');
+if (viewElement != null && viewElement.value=='')
+{
+	formElement.removeChild(viewElement);
+}
+
+formElement.submit();
+}else
+{
+
+if (formElement != null && formElement.action!=null && (formElement.action.value=='deleteAssignmentValidate' || formElement.action.value=='deleteAssignment')){
+formElement.action.value=null;
+}formElement.submit();}
+
+return;}
+</script>
+<table width="710" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td align="left"><table  border="0" cellspacing="0" cellpadding="0">
+<tr bgcolor="white">
+	<td width="95%"><span class="pagination-txt"  style="background-color:white">1 - 20 of 26 Records </span></td>
+</tr>
+<input type="hidden" name="maxrecords" value="26"/>
+</table>
+</td>
+          <td align="right"><table  border='0' cellspacing='0' cellpadding='0'>
+<tr bgcolor='white'>
+	<td>
+	  <a onclick='javascript:firstPageForPaginationviewAllAssignmentsForm();return false;' name='firstrecord' href='#'>
+		<img  src='images/page-prev-all.gif' width='13' height='12' border='0' alt='First' title='First' align='absmiddle' />
+	  </a>
+	</td>
+	<td>
+	  <a onclick='javascript:previousPageForPaginationviewAllAssignmentsForm();return false;' name='previuosrecord' href='#'>
+		<img  src='images/page-prev.gif' width='13' height='12' border='0' alt='Previous' title='Previous' align='absmiddle' />
+	  </a>
+	</td>
+	<td class='pagination-txt'>&nbsp;Go to page&nbsp;&nbsp;</td>
+	<td><input class='pagination-txt' type='text' name='epcPaginationPageNumberviewAllAssignmentsForm' id='epcPaginationPageNumberviewAllAssignmentsForm' value='1' size='3' title='Enter Page Number' onKeyPress='return specificPageForPaginationviewAllAssignmentsForm(event)'></td>
+	<td class='pagination-txt'>&nbsp;of&nbsp;2</td>
+	<td>
+	  <a onclick='javascript:nextPageForPaginationviewAllAssignmentsForm();return false;' name='nextrecord' href='#'>
+		<img  src='images/page-next.gif' width='12' height='12' border='0' alt='Next' title='Next' align='absmiddle' hspace='2' />
+	 </a>
+	</td>
+	<td>
+	  <a onclick='javascript:lastPageForPaginationviewAllAssignmentsForm();return false;' name='lastrecord' href='#'>
+		<img  src='images/page-next-all.gif' width='12' height='12' border='0' alt='Last' title='Last' align='absmiddle' hspace='2' />
+	  </a>
+	</td>
+</tr>
+</table>
+</td>
+        </tr>
+       </table>           
+        <table border="0" cellspacing="0" cellpadding="0" class="fieldset-table table-center-align"> 
+          <tr>
+            <td>				
+                <div id="tableOutline">
+                <table border="0" cellpadding="0" cellspacing="0" id="viewAssignments_AssignmentsTable" class="dataTable">
+                    <thead>
+                        <tr><th class="chs010" align="left" >Subject</th>
+                            <th class="chs015" align="left">Assignment</th>
+                            <th class="chs004" align="left">&nbsp;</th>
+                            <th class="chs010" align="left">Due Date</th>
+                            <th class="chs008" align="left">Student Count</th>
+                            <th class="chs008" align="left">Status</th>
+                            <th class="chs010" align="left">Actions</th>
+                            <th class="chs010" align="left">Show Answers</th>
+                             <!-- TC-117 End -->
+                         </tr>
+                    </thead>
+                    <tbody>
+                    <tr align="left" bgcolor="#FFFFFF" class="even"> 
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Beginning of the Year Test</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">08/23/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">22/27</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=6877004">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(6877004,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=6877004">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('6877004', '08/23/16 23:59:59', '0', 'Beginning of the Year Test','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('6877004','22','27','Completed','N','','','Beginning of the Year Test','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(6877004,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Beginning of the Year Test</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">08/25/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">2/2</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=6884294">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(6884294,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=6884294">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('6884294','2','2','Completed','N','','','Beginning of the Year Test','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(6884294,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Beginning of the Year Test</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">09/08/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">1/1</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=6973081">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(6973081,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=6973081">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('6973081','1','1','Completed','N','','','Beginning of the Year Test','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(6973081,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">chapter 1</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">09/30/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">18/30</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7240347">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7240347,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7240347">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7240347', '09/30/16 23:59:59', '0', 'chapter 1','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7240347','18','30','Completed','N','','','chapter 1','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7240347,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">chapter 1 retake</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">09/30/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">1/1</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7241472">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7241472,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7241472">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7241472','1','1','Completed','N','','','chapter 1 retake','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7241472,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Addition with regrouping</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/01/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">2/30</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7253699">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7253699,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7253699">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7253699', '10/01/16 23:59:59', '0', 'Addition with regrouping','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7253699','2','30','Completed','N','','','Addition with regrouping','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7253699,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Rounding</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/01/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">10/30</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7253841">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7253841,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7253841">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7253841', '10/01/16 23:59:59', '0', 'Rounding','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7253841','10','30','Completed','N','','','Rounding','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7253841,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Commutative and Identity Property of Addition</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/02/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">10/30</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7255153">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7255153,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7255153">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7255153', '10/02/16 23:59:59', '0', 'Commutative and Identity Property of Addition','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7255153','10','30','Completed','N','','','Commutative and Identity Property of Addition','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7255153,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Subtraction with regrouping</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/02/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">14/30</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7256712">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7256712,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7256712">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7256712', '10/02/16 23:59:59', '0', 'Subtraction with regrouping','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7256712','14','30','Completed','N','','','Subtraction with regrouping','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7256712,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Retake</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/06/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">3/4</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7327023">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7327023,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7327023">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7327023', '10/06/16 23:59:59', '0', 'Retake','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7327023','3','4','Completed','N','','','Retake','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7327023,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">chapter 1 retake</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/06/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">18/30</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7326073">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7326073,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7326073">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7326073', '10/06/16 23:59:59', '0', 'chapter 1 retake','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7326073','18','30','Completed','N','','','chapter 1 retake','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7326073,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Picture graph</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/26/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">1/1</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7610299">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7610299,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7610299">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7610299','1','1','Completed','N','','','Picture graph','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7610299,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Tally Charts</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/26/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">1/1</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7610315">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7610315,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7610315">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7610315','1','1','Completed','N','','','Tally Charts','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7610315,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Picture graph</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/28/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">24/31</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7560038">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7560038,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7560038">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7560038', '10/28/16 23:59:59', '0', 'Picture graph','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7560038','24','31','Completed','N','','','Picture graph','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7560038,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">Tally Charts</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/28/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">26/31</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7560081">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7560081,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7560081">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7560081', '10/28/16 23:59:59', '0', 'Tally Charts','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7560081','26','31','Completed','N','','','Tally Charts','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7560081,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">bar graph</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">10/30/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">9/31</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7668524">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7668524,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7668524">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7668524', '10/30/16 23:59:59', '0', 'bar graph','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7668524','9','31','Completed','N','','','bar graph','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7668524,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">chapter 2</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">11/04/16</td>
+	                            <td align="left">0/1</td>
+	                                <td align="left">
+	                            Expired</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7764141">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7764141,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7764141">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7764141', '11/04/16 23:59:59', '0', 'chapter 2','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7764141,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">retake Chapter 2</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">11/04/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">1/1</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7764266">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7764266,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7764266">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7764266','1','1','Completed','N','','','retake Chapter 2','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7764266,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#FFFFFF" class="even">
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">bar graph</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">11/07/16</td>
+	                            <!-- AS-2675 start -->
+		                                  <td align="left">1/1</td>
+		                                		<!-- AS-2675 end -->
+		                                <td align="left">
+	                            Completed</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7785229">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7785229,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7785229">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <a href="javascript:getResultsPrescription('7785229','1','1','Completed','N','','','bar graph','false','0')">Results &amp; Prescriptions</a><!-- TCD-4941  -->
+	                                         <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7785229,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    <tr align="left" bgcolor="#f2f2f2" class="odd">  
+                         <td align="left">
+                                    Mathematics</td>
+
+                                <td align="left">
+                                   <span class="viewlist-assignment">bar graph</span>
+                                </td>
+                                <td align="left" style="padding:0px;">
+                                    <div class="tooltip">
+									<img src="https://www-k6.thinkcentral.com/ePC/images/Standard-or-basic-test-Search-or-assigned-AP-not-enabled-not-AP-capable.jpg" name="calButton"  border="0" id="calButton" alt="An assessment resource" width="20"><span class="tip"> An assessment resource.</span></div>
+									</td>
+                                
+                                <td align="left">11/07/16</td>
+	                            <td align="left">0/1</td>
+	                                <td align="left">
+	                            Expired</td>
+	                            <td align="left">
+	                   <!-- TCD-6174 Home Activity Change Start -->
+	                       
+	                       <!-- TCD-7999 - Start -->
+	                       <a href="viewAssignment.do?method=viewAssignment&intervenable=n&assignmentId=7785660">View</a>	
+								<!-- TCD-7999 - End -->
+	                       
+	                        <!-- TCD-6174 Home Activity Change End -->	                      
+	                      <a href="javascript:validateDeleteStatus(7785660,0);">Delete</a>
+				<!--<input type="button" value="Export Results" name="export">-->
+				<!-- TCD-7999 - Start -->
+         		 <a href="copyAssignment.do?method=copyAssignment&intervenable=n&assignment_id=7785660">Copy</a>	
+								<!-- TCD-7999 - End -->	            
+	            	            
+				<!--  PMTPT-10 Reopen Assignment start--> 
+               	 <!-- TCNF-633 start-->
+                      <span onclick="javascript:reOpenAssignment('7785660', '11/07/16 23:59:59', '0', 'bar graph','A');">
+                                                                  <a href="#">Reopen</a>
+                                                            </span>
+                                                            <!--TCNF-633 End -->
+	           	 		
+				 <!--  PMTPT-10 Reopen Assignment end-->                   
+	                                <br>
+	                                <!-- dont show view progress for assessments or interventions -->
+	                                <!--  Interventions link -->
+	                                </td>
+	                            
+	                               <td align="left" valign="middle">&nbsp;	
+	                               <a href="javascript:updateAllAssignment(7785660,'Y');">                                                               
+                                        		<img src="https://www-k6.thinkcentral.com/ePC/images/topleftnew.png" name="calFlipButton" alt="Show Answer Yes"  border="0"  id="calFlipButton" class="assign_paddingtop5"></a>
+                                        </td> 
+	                            
+	                         </tr>	                         
+	                    </tbody>
+                </table>
+            </div>
+            </td>
+          </tr>
+			<tr>
+                <td>                    
+                   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="fieldset-table">
+                    <tr>
+                      <td align="left"><table  border="0" cellspacing="0" cellpadding="0">
+<tr bgcolor="white">
+	<td width="95%"><span class="pagination-txt"  style="background-color:white">1 - 20 of 26 Records </span></td>
+</tr>
+<input type="hidden" name="maxrecords" value="26"/>
+</table>
+</td>
+                      <td align="right"><table  border='0' cellspacing='0' cellpadding='0'>
+<tr bgcolor='white'>
+	<td>
+	  <a onclick='javascript:firstPageForPaginationviewAllAssignmentsForm();return false;' name='firstrecord' href='#'>
+		<img  src='images/page-prev-all.gif' width='13' height='12' border='0' alt='First' title='First' align='absmiddle' />
+	  </a>
+	</td>
+	<td>
+	  <a onclick='javascript:previousPageForPaginationviewAllAssignmentsForm();return false;' name='previuosrecord' href='#'>
+		<img  src='images/page-prev.gif' width='13' height='12' border='0' alt='Previous' title='Previous' align='absmiddle' />
+	  </a>
+	</td>
+	<td class='pagination-txt'>&nbsp;Go to page&nbsp;&nbsp;</td>
+	<td class='tinyLabel'><input class='pagination-txt' type='text' name='epcPaginationPageNumberBottomviewAllAssignmentsForm' id='epcPaginationPageNumberBottomviewAllAssignmentsForm' value='1' size='3' title='Enter Page Number' onKeyPress='return specificPageForPaginationBottomviewAllAssignmentsForm(event)'></td>
+	<td class='pagination-txt'>&nbsp;of&nbsp;2</td>
+	<td>
+	  <a onclick='javascript:nextPageForPaginationviewAllAssignmentsForm();return false;' name='nextrecord' href='#'>
+		<img  src='images/page-next.gif' width='12' height='12' border='0' alt='Next' title='Next' align='absmiddle' hspace='2' />
+	 </a>
+	</td>
+	<td>
+	  <a onclick='javascript:lastPageForPaginationviewAllAssignmentsForm();return false;' name='lastrecord' href='#'>
+		<img  src='images/page-next-all.gif' width='12' height='12' border='0' alt='Last' title='Last' align='absmiddle' hspace='2' />
+	  </a>
+	</td>
+</tr>
+</table>
+</td>
+                    </tr>
+                   </table>                
+                </td>
+           </tr>
+            <tr>
+                <td align="right" height="40"><input name="SearchResources" type="button" id="searchResources" value="Add Test" onClick="javascript:callsearchresources();">
+                <input name="MakeCustomAssignment" type="button"  id="makeCustomAssignment" value="Add Assignment" onClick="callmakecustomassignment();"></td>
+              </tr>
+            </table>
+        </fieldset>        
+        </td>
+       
+  </tr>
+</table>
+ <input type="hidden" name="offSetId" id="offSetId" value="-18000000" />
+    <script>
+        var offSetIdValue = document.getElementById('offSetId').value;
+	</script>
+<input type="hidden" name="validationStatus" id="validationStatus" value="" />
+<input type="hidden" name="validationEditStatus" id="validationEditStatus" value="" />
+<input type="hidden" name="assignmentToDelete" id="assignmentToDelete"  value=""/>
+<input type="hidden" name="assignStatus" id="assignStatus" value="" />
+<input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+
+	<div id="hiddenContentforScreenReader">
+		<label for="fromDateTxtInp">Due Date From</label>
+		<label for="toDateTxtInp">Due Date To</label>
+	</div>
+</body>
+
+</form><script language="JavaScript" type="text/JavaScript">
+MM_preloadImages('https://www-k6.thinkcentral.com/ePC/images/triangle.jpg');
+function callDelete(assignmentId,sessionStatus,completedStudents,assignedStudents,startedStudents,description)
+{
+	$('#deleteDialog1').dialog({
+		autoOpen: false,
+		modal : true,
+		width:606,
+		closeText: 'hide',
+		closeOnEscape: false,
+		open: function() { 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+		}, 
+		buttons: { 
+			"Yes":function() { 
+				document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+	            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+	            document.forms[0].submit();
+	            $(this).dialog("close"); 
+	             },
+			"No":function() { 
+	        	$(this).dialog("close"); 
+						}
+			}
+			});
+	
+	$('#deleteDialog2').dialog({
+		autoOpen: false,
+		modal : true,
+		width:606,
+		closeText: 'hide',
+		closeOnEscape: false,
+		open: function() { 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+		}, 
+		buttons: { 
+			"Yes":function() { 
+				document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+	            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+	            document.forms[0].submit();
+	            $(this).dialog("close"); 
+	             },
+			"No":function() { 
+	        	$(this).dialog("close"); 
+						}
+			}
+			});
+	
+	$('#deleteDialog3').dialog({
+		autoOpen: false,
+		modal : true,
+		width:606,
+		closeText: 'hide',
+		closeOnEscape: false,
+		open: function() { 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+		}, 
+		buttons: { 
+			"Yes":function() { 
+				document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+	            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+	            document.forms[0].submit();
+	            $(this).dialog("close"); 
+	             },
+			"No":function() { 
+	        	$(this).dialog("close"); 
+						}
+			}
+			});
+	
+	$('#deleteDialog4').dialog({
+		autoOpen: false,
+		modal : true,
+		width:606,
+		closeText: 'hide',
+		closeOnEscape: false,
+		open: function() { 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+		}, 
+		buttons: { 
+			"Yes":function() { 
+				document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+	            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+	            document.forms[0].submit();
+	            $(this).dialog("close"); 
+	             },
+			"No":function() { 
+	        	$(this).dialog("close"); 
+						}
+			}
+			});
+	
+	$('#deleteDialog5').dialog({
+		autoOpen: false,
+		modal : true,
+		width:606,
+		closeText: 'hide',
+		closeOnEscape: false,
+		open: function() { 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+		}, 
+		buttons: { 
+			"Yes":function() { 
+				document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+	            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+	            document.forms[0].submit();
+	            $(this).dialog("close"); 
+	             },
+			"No":function() { 
+	        	$(this).dialog("close"); 
+						}
+			}
+			});
+	
+	$('#deleteDialog6').dialog({
+		autoOpen: false,
+		modal : true,
+		width:606,
+		closeText: 'hide',
+		closeOnEscape: false,
+		open: function() { 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+		}, 
+		buttons: { 
+			"Yes":function() { 
+				document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+	            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+	            document.forms[0].submit();
+	            $(this).dialog("close"); 
+	             },
+			"No":function() { 
+	        	$(this).dialog("close"); 
+						}
+			}
+			});
+    if(sessionStatus=='active')
+    {
+        alert('The assignment cannot be deleted at this time; one or more students have the assignment open.  Please try again later.');
+        return;
+    }
+    
+   
+         
+    if(description=='Expired')
+    	{
+    	if(completedStudents==0 && startedStudents!=0 ){
+    		$('#deleteDialog1').dialog("open");
+    	}
+    	else if(completedStudents!=0){ 
+            //TC-1084 var isConfirm = window.confirm("\t \t \t \t     W A R N I N G\nThis will remove the assignment from your student's to-do lists. Do you want to delete the selected assignment?");
+        	$('#deleteDialog2').dialog("open");
+    	}
+    	else if(startedStudents==0 && completedStudents==0)
+    		{
+    		document.forms[0].EPC_CSRF_TOKEN.value=document.forms[0].viewAllAssignments.value;
+            document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+assignmentId;
+            document.forms[0].submit();
+    		}
+    	}
+    else{
+    	//no one started
+ if(startedStudents==0 && completedStudents==0){ 
+        //TC-1084 var isConfirm = window.confirm("\t \t \t \t     W A R N I N G\nThis will remove the assignment from your student's to-do lists. Do you want to delete the selected assignment?");
+        $('#deleteDialog3').dialog("open");
+         		}
+    
+    // for Teacher Action Required
+    else  if(description=='Teacher Action Required' ){ 
+        //TC-1084 var isConfirm = window.confirm("\t \t \t \t     W A R N I N G\nThis will remove the assignment from your student's to-do lists. Do you want to delete the selected assignment?");
+       $('#deleteDialog4').dialog("open");
+	       }
+   //one or more students completed
+    else  if( (completedStudents!=0)||(startedStudents==0 && description=='Completed')  ){ 
+        //TC-1084 var isConfirm = window.confirm("\t \t \t \t     W A R N I N G\nThis will remove the assignment from your student's to-do lists. Do you want to delete the selected assignment?");
+       $('#deleteDialog5').dialog("open");
+	       }
+    
+    
+  //all students are in progress
+ //in progress
+    else  if((startedStudents==assignedStudents && completedStudents==0)||(startedStudents!=0 && completedStudents==0)){ 
+        //TC-1084 var isConfirm = window.confirm("\t \t \t \t     W A R N I N G\nThis will remove the assignment from your student's to-do lists. Do you want to delete the selected assignment?");
+    	$('#deleteDialog6').dialog("open");
+             
+      }
+   
+    }
+}
+
+ MM_preloadImages('https://www-k6.thinkcentral.com/ePC/images/Cal_Down.jpg');
+ enableDropdowns();
+  //TCD-1295 start
+ if(document.forms[0].validationStatus.value != null && document.forms[0].validationStatus.value != "" && document.forms[0].validationStatus.value != "NA"){
+	if(document.forms[0].assignStatus.value == "ACTIVE"){
+		$('#deleteDialog').dialog({
+			autoOpen: false,
+			modal : true,
+			width:606,
+			closeText: 'hide',
+			closeOnEscape: false,
+			buttons: { 
+				"Close":function() { 
+						//document.forms[0].action = null;
+						document.forms[0].assignmentToDelete.value =null;
+						document.forms[0].assignStatus.value = null;
+    					$(this).dialog("close"); 
+		        	}
+				}
+				});
+
+}else if(document.forms[0].assignStatus.value != null && document.forms[0].assignStatus.value != ""){
+			$('#deleteDialog').dialog({
+					autoOpen: false,
+					modal : true,
+					width:606,
+					closeText: 'hide',
+					closeOnEscape: false,
+					open: function() { 
+						$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(1)').focus(); 
+						$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+					}, 
+					buttons: { 
+						"Delete":function() { 
+							document.forms[0].EPC_CSRF_TOKEN.value='50X3-4AR9-H81J-MY5L-VQZI-76VT-JUE3-4SMB-NSA8-CG9W-UVL7-Y7X6-QSVY-OYJE-2GJH-G055-O5OB-MIR7-0KZK-I785-VMJN-LRTR-3GGM-9H0I';
+							document.forms[0].action = "viewAllAssignments.do?method=viewAllAssignments&action=deleteAssignment&assignmentId="+document.forms[0].assignmentToDelete.value;
+				        	document.forms[0].submit(); 
+				        	},
+						"Cancel":function() { 
+				        		//document.forms[0].action = null;
+								document.forms[0].assignmentToDelete.value =null;
+								document.forms[0].assignStatus.value = null;
+								$(this).dialog("close"); 
+									}
+						}
+						});
+	}
+	$('#deleteDialog').dialog("open");
+ }
+ 
+ //alert("".length);
+	if("".length >0)
+	{
+		//alert("hi"); 
+		$('#saveASDialog').dialog({
+				autoOpen: false,
+				modal : true,
+				width:606,
+				closeText: 'hide',
+				closeOnEscape: false,
+				open: function() { 
+					 
+				
+					$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').focus(); 
+					//$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane button:eq(0)').blur(); 
+				}, 
+				buttons: { 		
+					"Ok":function() {  
+									
+									$(this).dialog("close"); 
+						        	}
+					}
+				
+					});
+					$('#saveASDialog').dialog("open"); 
+		
+	} 
+	 
+	
+	
+  
+ //TCD-1295 end
+</script></div>
+		</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</p>
+
+</fieldset>
+
+<!--TC-4058 start-->
+<div>
+<div id="container_footer">
+   <div id="footer">
+<div class="copyrights_login textalign_center" style="background: url(https://www-k6.thinkcentral.com/ePC/images/footerbg.jpg) repeat-x; height:143px; width:100%;">	
+	<table width="960" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr valign="baseline">
+			<td width="200" align="left" style="padding-top:45px">
+            <a alt="Houghton Mifflin Harcourt Opens in a new window" title=" Houghton Mifflin Harcourt Opens in a new window" target="_blank" href="http://www.hmhco.com" onClick="return !footerLinkWindowFullSize(this.href, this.target)"><img src="https://www-k6.thinkcentral.com/ePC/images/HMH_logo_test.png" width="198" height="33" alt="Houghton Mifflin Harcourt Opens in a new window"/>
+            </td>
+			<td align="right">
+            <span class = "copyrights_login textalign_right">
+            <a class="copyactive" tabindex="" alt="Opens in a new window" title="Opens in a new window" target="_blank" href="http://www.hmhco.com/common/k-12-learning-platforms-terms-of-use" onClick="return !footerLinkWindowFullSize(this.href, this.target)">Terms of Use</a>&nbsp;&nbsp; <img src="https://www-k6.thinkcentral.com/ePC/images/divider.gif"/> &nbsp;&nbsp;<a class="copyactive" tabindex="" title="Opens in a new window" alt="Opens in a new window" target="_blank" href="http://hmhco.com/common/privacy-policy-for-k-12-learning-platforms" onClick="return !footerLinkWindowFullSize(this.href, this.target)">Privacy Policy</a>&nbsp;&nbsp; <img src="https://www-k6.thinkcentral.com/ePC/images/divider.gif"/> &nbsp;&nbsp;<a class="copyactive" tabindex="" title="Opens in a new window" alt="Opens in a new window" target="_blank" href="http://customercare.hmhco.com/contactus/contact_us.html" onClick="return !footerLinkWindowFullSize(this.href, this.target)">Contact Us</a>&nbsp;&nbsp; <img src="https://www-k6.thinkcentral.com/ePC/images/divider.gif"/>&nbsp;&nbsp;<a class="copyactive" tabindex="" title="Opens in a new window" alt="Opens in a new window" target="_blank" href="http://customercare.hmhco.com/product/techsupport/CCTechSupportSearchResults.html?id=1294821151" onClick="return !footerLinkWindowFullSize(this.href, this.target)">Technical Support</a>&nbsp;&nbsp; <img src="https://www-k6.thinkcentral.com/ePC/images/divider.gif"/> &nbsp;&nbsp;<a class="copyactive" tabindex="" title="Opens in a new window" alt="Opens in a new window" target="_blank" href="http://www.hmhco.com" onClick="return !footerLinkWindowFullSize(this.href, this.target)">Corporate Site</a>&nbsp;
+            </span>
+			</td>
+		</tr>
+         <tr>
+			<td colspan="2" align="right" style="padding-top:35px" class="copyrights_footer">&copy;Houghton Mifflin Harcourt. All rights reserved</td>
+		</tr>
+	</table>
+</div>
+</div>
+</div></div>
+<!--TC-4058 end-->
+<form name="helpForm" method="post">
+  <input type="hidden" value='ASViewAsgns' name="helpPage"/>
+  <input type="hidden" value='TEACHER' name="userRoleInSession"/>
+  <input type="hidden" value="" name="evalUser"/>
+</form>
+<script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-43640620-1']);_gaq.push(['_trackPageview']);_gaq.push(['_setDomainName', 'thinkcentral.com']);_gaq.push(['_setCustomVar',1, 'role', 'TEACHER',2]); (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script><script type="text/javascript">_satellite.pageBottom();</script>
+</body>
+</html>
